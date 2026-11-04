@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Plataforma educativa de secundaria del Perú. Accede a materiales de clase, ejercicios resueltos y tareas de Matemática.">
+
+    <meta name="theme-color" content="#F3F5FA">
+
+    <title>Plataforma Educativa | Secundaria</title>
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- ======================================
+         BARRA DE NAVEGACIÓN
+    ======================================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="#" class="logo" id="logoInicio">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="logo-text">
+                    <h1>EduSecundaria</h1>
+                    <span>Plataforma Educativa</span>
+                </div>
+
+            </a>
+
+            <nav class="navbar">
+
+                <a href="#inicio" class="nav-link active">
+                    Inicio
+                </a>
+
+                <a href="#grados" class="nav-link">
+                    Grados
+                </a>
+
+                <a href="#sobre" class="nav-link">
+                    Acerca de
+                </a>
+
+            </nav>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================
+         CONTENIDO PRINCIPAL
+    ======================================= -->
+
+    <main>
+
+
+        <!-- ==================================
+             INICIO
+        =================================== -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        <i class="fa-solid fa-book-open"></i>
+                        Educación secundaria
+                    </span>
+
+                    <h2>
+                        Aprende a tu ritmo,
+                        <span>crece cada día.</span>
+                    </h2>
+
+                    <p>
+                        Encuentra los materiales de tus clases,
+                        estudia con ejercicios resueltos y
+                        refuerza tus conocimientos con actividades
+                        diseñadas para cada grado de secundaria.
+                    </p>
+
+                    <a href="#grados" class="btn-primary">
+                        Explorar materiales
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <div class="hero-card hero-card-main">
+
+                        <div class="hero-illustration">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+
+                        <h3>Tu aprendizaje comienza aquí</h3>
+
+                        <p>
+                            Materiales organizados para cada clase.
+                        </p>
+
+                    </div>
+
+
+                    <div class="floating-card floating-card-one">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        <div>
+                            <strong>Material de clase</strong>
+                            <span>Organizado por temas</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-card-two">
+
+                        <i class="fa-solid fa-check-circle"></i>
+
+                        <div>
+                            <strong>Aprende y practica</strong>
+                            <span>Refuerza tus conocimientos</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             GRADOS DE SECUNDARIA
+        =================================== -->
+
+        <section class="grades-section" id="grados">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    COMIENZA A APRENDER
+                </span>
+
+                <h2>Selecciona tu grado</h2>
+
+                <p>
+                    Elige el año que estás cursando para
+                    encontrar tus materiales educativos.
+                </p>
+
+            </div>
+
+
+            <!-- Las tarjetas serán generadas con JavaScript -->
+
+            <div class="grades-grid" id="gradesGrid">
+
+                <div class="loading-message">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Cargando grados...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SELECCIÓN DE CURSOS
+        =================================== -->
+
+        <section class="courses-section hidden"
+                 id="coursesSection">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    TU GRADO SELECCIONADO
+                </span>
+
+                <h2 id="coursesTitle">
+                    Selecciona un curso
+                </h2>
+
+                <p>
+                    Explora los cursos disponibles en tu grado.
+                </p>
+
+            </div>
+
+
+            <!-- Navegación -->
+
+            <div class="breadcrumb" id="coursesBreadcrumb">
+
+                <button class="breadcrumb-link"
+                        id="backToGrades">
+
+                    <i class="fa-solid fa-house"></i>
+                    Grados
+
+                </button>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span id="breadcrumbGrade">
+                    Grado seleccionado
+                </span>
+
+            </div>
+
+
+            <!-- Cursos generados con JavaScript -->
+
+            <div class="courses-grid" id="coursesGrid">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             LISTADO DE TEMAS
+        =================================== -->
+
+        <section class="topics-section hidden"
+                 id="topicsSection">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    CONTENIDO DEL CURSO
+                </span>
+
+                <h2 id="topicsTitle">
+                    Temas de Matemática
+                </h2>
+
+                <p>
+                    Selecciona un tema para acceder a sus
+                    materiales educativos.
+                </p>
+
+            </div>
+
+
+            <!-- Navegación -->
+
+            <div class="breadcrumb" id="topicsBreadcrumb">
+
+                <button class="breadcrumb-link"
+                        id="backToCourses">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Cursos
+
+                </button>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span id="breadcrumbCourse">
+                    Matemática
+                </span>
+
+            </div>
+
+
+            <!-- Buscador de temas -->
+
+            <div class="topics-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="topicSearch"
+                    placeholder="Buscar un tema..."
+                    autocomplete="off"
+                    aria-label="Buscar temas">
+
+            </div>
+
+
+            <!-- Temas generados con JavaScript -->
+
+            <div class="topics-grid" id="topicsGrid">
+
+            </div>
+
+
+            <!-- Mensaje cuando no hay resultados -->
+
+            <div class="empty-message hidden"
+                 id="emptyTopics">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <h3>No se encontraron temas</h3>
+
+                <p>
+                    Intenta buscar con otro nombre.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             MATERIALES DEL TEMA
+        =================================== -->
+
+        <section class="materials-section hidden"
+                 id="materialsSection">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    RECURSOS EDUCATIVOS
+                </span>
+
+                <h2 id="materialsTitle">
+                    Material del tema
+                </h2>
+
+                <p id="materialsDescription">
+                    Selecciona el material que deseas consultar.
+                </p>
+
+            </div>
+
+
+            <!-- Navegación -->
+
+            <div class="breadcrumb" id="materialsBreadcrumb">
+
+                <button class="breadcrumb-link"
+                        id="backToTopics">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Temas
+
+                </button>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span id="breadcrumbTopic">
+                    Tema seleccionado
+                </span>
+
+            </div>
+
+
+            <!-- Tarjetas de recursos -->
+
+            <div class="materials-grid">
+
+
+                <!-- TEORÍA -->
+
+                <article class="material-card theory-card">
+
+                    <div class="material-icon">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+                    <div class="material-info">
+
+                        <span class="material-type">
+                            MATERIAL DE ESTUDIO
+                        </span>
+
+                        <h3>Teoría</h3>
+
+                        <p>
+                            Consulta el contenido teórico
+                            correspondiente al tema.
+                        </p>
+
+                    </div>
+
+                    <button class="btn-download"
+                            id="downloadTheory">
+
+                        <i class="fa-solid fa-download"></i>
+                        Descargar teoría
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- EJERCICIOS RESUELTOS -->
+
+                <article class="material-card exercises-card">
+
+                    <div class="material-icon">
+
+                        <i class="fa-solid fa-square-root-variable"></i>
+
+                    </div>
+
+                    <div class="material-info">
+
+                        <span class="material-type">
+                            APRENDE PASO A PASO
+                        </span>
+
+                        <h3>Ejercicios resueltos</h3>
+
+                        <p>
+                            Aprende cómo resolver los ejercicios
+                            mediante procedimientos explicados.
+                        </p>
+
+                    </div>
+
+                    <button class="btn-download"
+                            id="downloadExercises">
+
+                        <i class="fa-solid fa-download"></i>
+                        Descargar ejercicios
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- TAREA -->
+
+                <article class="material-card homework-card">
+
+                    <div class="material-icon">
+
+                        <i class="fa-solid fa-clipboard-list"></i>
+
+                    </div>
+
+                    <div class="material-info">
+
+                        <span class="material-type">
+                            PON A PRUEBA LO APRENDIDO
+                        </span>
+
+                        <h3>Tarea</h3>
+
+                        <p>
+                            Practica tus conocimientos resolviendo
+                            los ejercicios propuestos.
+                        </p>
+
+                    </div>
+
+                    <button class="btn-download"
+                            id="downloadHomework">
+
+                        <i class="fa-solid fa-download"></i>
+                        Descargar tarea
+
+                    </button>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- Mensajes de descarga -->
+
+            <div class="download-message hidden"
+                 id="downloadMessage"
+                 role="alert"
+                 aria-live="polite">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             INFORMACIÓN DE LA PLATAFORMA
+        =================================== -->
+
+        <section class="about-section" id="sobre">
+
+            <div class="about-container">
+
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        SOBRE LA PLATAFORMA
+                    </span>
+
+                    <h2>Educación organizada para todos</h2>
+
+                    <p>
+                        Esta plataforma busca facilitar el acceso
+                        a los recursos pedagógicos utilizados en
+                        las instituciones educativas estatales
+                        del nivel secundario del Perú.
+
+                        Los materiales se organizan por grado,
+                        curso y tema, permitiendo que estudiantes
+                        y docentes encuentren rápidamente los
+                        recursos correspondientes a cada clase.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ======================================
+         PIE DE PÁGINA
+    ======================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>EduSecundaria</span>
+
+            </div>
+
+            <p>
+                Plataforma Web Educativa para el Nivel Secundario
+                en el Perú.
+            </p>
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Plataforma Educativa.
+                    Todos los derechos reservados.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ======================================
+         SCRIPTS
+    ======================================= -->
+
+    <!-- Datos de grados, cursos y temas -->
+
+    <script src="data/cursos.js"></script>
+
+    <!-- Funcionalidad de la plataforma -->
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
